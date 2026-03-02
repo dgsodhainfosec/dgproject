@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nifty 50 Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div>
+          <h1>Nifty 50 Tracker</h1>
+          <p class="subtitle">Track benchmark stocks, market breadth, and your watchlist in one place.</p>
+        </div>
+        <button id="refreshBtn" class="btn">Refresh Prices</button>
+      </header>
+
+      <section class="cards" aria-label="Market summary">
+        <article class="card">
+          <h2>NIFTY 50</h2>
+          <p id="indexPrice" class="value">--</p>
+          <p id="indexChange" class="change">--</p>
+        </article>
+        <article class="card">
+          <h2>Advances / Declines</h2>
+          <p id="breadth" class="value">--</p>
+          <p class="muted">Based on current table move.</p>
+        </article>
+        <article class="card">
+          <h2>Watchlist Value</h2>
+          <p id="watchValue" class="value">--</p>
+          <p class="muted">Saved in your browser.</p>
+        </article>
+      </section>
+
+      <section class="controls">
+        <label for="search">Search company</label>
+        <input id="search" type="search" placeholder="e.g. Reliance" />
+      </section>
+
+      <section class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Company</th>
+              <th>Price (₹)</th>
+              <th>Change</th>
+              <th>% Change</th>
+              <th>Watch</th>
+            </tr>
+          </thead>
+          <tbody id="stockRows"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
